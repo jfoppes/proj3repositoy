@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 #Jacob Foppes Project 3 -Downtime Tracker
 
-'''Downtime tracker will let authernicated useres openm the downtime tracking file and add a new line with the serice outage they are reporting '''
+'''Downtime tracker will let authernicated useres who can then  open the downtime tracking file and add a new line with the serice outage they are reporting '''
+
+
 '''Login:
 takes username and password inputs and refernces a dictionary of usernamaes/passwrods to allow or stop login '''
 import time
