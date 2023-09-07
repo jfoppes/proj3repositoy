@@ -19,7 +19,10 @@ while True:
     login = {
        cusername : cpassword
     }
-    if credentials[cusername] == cpassword: #checks username and passwrod againsts known good credentails to allow or stop login 
+    if cusername not in credentials:
+        print("\n User not found. Try agian. \n")
+        time.sleep(1)
+    elif credentials[cusername] == cpassword: #checks username and passwrod againsts known good credentails to allow or stop login 
         print("\n Login Succesfull \n")
         break
     else:
@@ -30,3 +33,18 @@ while True:
 Opens a logbook file and takes user input to add to the log'''
 
 
+choice = input("Would you like toi view or report an outage? \n (Enter: View, or Report)\n").lower()
+#choice = choice.lower()
+while True:
+    if choice == "view":
+        continue
+    log = open('outageLog.txt','r')
+    print("\n"+log.read()+"\n")
+    if choice =="report":
+        log = open('outageLog.txt','w')
+        outage = input("Use the following format to your outage:")
+        log.write(outage)
+    else:
+        print("Please enter a valid choice")    
+    
+    
