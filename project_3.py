@@ -23,26 +23,30 @@ while True:
         print("\n User not found. Try agian. \n")
         time.sleep(1)
     elif credentials[cusername] == cpassword: #checks username and passwrod againsts known good credentails to allow or stop login 
-        print("\n Login Succesfull \n")
+        print("\n Login Succesful \n")
         break
     else:
         print("\n Incorrect Login. Try agian. \n")
         time.sleep(1)
     
-''' Write:
+''' read and Write:
 Opens a logbook file and takes user input to add to the log'''
 
 while True:
-    choice = input("Would you like toi view or report an outage? \n (Enter: View, Report or exit)\n").lower()
+    choice = input("Would you like toi view or report an outage? \n (Enter: View, Report or exit)\n").lower() 
     if choice == "view":
-        log = open('outageLog.txt','r')
+        log = open('outageLog.txt','r') # open log file adn print
         print("\n"+log.read()+"\n\n\n\n")
-        time.sleep(2)
+        log.close()
+        time.sleep(1)
         continue
-    elif choice =="report":
+    elif choice =="report": # open log file and append user iunput 
         log = open('outageLog.txt','a')
         outage = input("Use the following format to your outage:Format : \n [Date/Time], Reason for outage, Actions Taken, Expected return of services \n EX:\n [15:14 4 May 2023] Power outage, Restored power, 30 mins\n")
-        log.write(outage)
+        log.write("\n" + outage + "\n")
+        print("Update Recived\n")
+        time.sleep(1)
+        log.close()
     elif choice == "exit":
         break
     else:
