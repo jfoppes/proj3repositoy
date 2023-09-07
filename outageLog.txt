@@ -1,0 +1,6 @@
+Log System Downtime 
+
+Format :
+[Date/Time], Reason for outage, Actions Taken, Expected return of services 
+EX:
+[15:14 4 May 2023] Power outage, Restored power, 30 mins

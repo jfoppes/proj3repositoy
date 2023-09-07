@@ -33,14 +33,15 @@ while True:
 Opens a logbook file and takes user input to add to the log'''
 
 
-choice = input("Would you like toi view or report an outage? \n (Enter: View, or Report)\n").lower()
+
 #choice = choice.lower()
 while True:
+    choice = input("Would you like toi view or report an outage? \n (Enter: View, or Report)\n").lower()
     if choice == "view":
+        log = open('outageLog.txt','r')
+        print("\n"+log.read()+"\n\n\n\n")
         continue
-    log = open('outageLog.txt','r')
-    print("\n"+log.read()+"\n")
-    if choice =="report":
+    elif choice =="report":
         log = open('outageLog.txt','w')
         outage = input("Use the following format to your outage:")
         log.write(outage)
