@@ -14,7 +14,18 @@ with open("pwdfile.txt") as p: #open the creditial file
         credentials[(usr)]= pw #add the useranme and passwrod entry to the dictionary 
 
 
-
+while True:
+    print("Welcome to Downtime tracker. Please login")
+    cusername = input("Enter your username") # Storeing username and password 
+    cpassword = input("Enter your passwrod")
+    login = {
+       cusername : cpassword
+    }
+    if credentials[cusername] == cpassword: #checks username and passwrod againsts known good credentails to allow or stop login 
+        print("Login Succesfull")
+        break
+    else:
+        print("Incorrect Login. Try agian")
     
 ''' Write:
 Opens a logbook file and takes user input to add to the log'''

@@ -1,0 +1,5 @@
+jshar004 password
+jfopp001 hello
+jchar001 goodbye
+shenr002 professor
+bmorr002 classes
